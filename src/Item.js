@@ -2,7 +2,6 @@ import ListItem from '@mui/material/ListItem';
 import useToggle from './hooks.js/useToggle';
 import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
-// import DeleteSharpIcon from '@mui/icons-material/DeleteSharp';
 import IconButton from '@mui/material/IconButton';
 import DeleteSharp from '@mui/icons-material/DeleteSharp';
 import EditSharp from '@mui/icons-material/EditSharp';

@@ -6,7 +6,6 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
-import { v4 as uuid } from 'uuid';
 import useListState from './hooks.js/useListState';
 
 function TodoApp() {
