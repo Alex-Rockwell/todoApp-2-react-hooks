@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import TextField from '@mui/material/TextField';
-import useInputState from './hooks.js/useInputState'
+import useInputState from './hooks/useInputState'
+import { TodosContext } from './context/TodosContext';
 
 function EditItemForm(props) {
   const [inp, handleInpChange, resetInp] = useInputState(props.text)
+  const {editItem} = useContext(TodosContext)
+
   return (
     <>
       <form 
         style={{width: '100%', marginLeft: '12px', marginRight: '12px'}}
         onSubmit={(e) => {
           e.preventDefault()
-          props.editItem(props.id, inp)
-          console.log(inp)
-          console.log(props.editItem)
+          editItem(props.id, inp)
           resetInp()
           props.toggle()
         }}

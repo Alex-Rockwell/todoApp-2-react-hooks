@@ -1,25 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import Item from './Item';
 import Divider from '@mui/material/Divider';
 import { v4 as uuid } from 'uuid';
+import { TodosContext } from './context/TodosContext';
 
 function TodoList(props) {
-  if (props.list.length > 0)
+  const {list} = useContext(TodosContext)
+  if (list.length > 0)
   return (
     <Paper>
       <List>
-        {props.list.map((el, i) => (
+        {list.map((el, i) => (
           <div  key={uuid()}>
             <Item 
-            key={el.id}
-            {...el}
-            removeListItem={props.removeListItem}
-            toggleComplete={props.toggleComplete}
-            editItem={props.editItem}
+              key={el.id}
+              {...el}
             />
-            {i < props.list.length - 1 &&  <Divider/>}
+            {i < list.length - 1 &&  <Divider/>}
           </div>
          )
         )}
