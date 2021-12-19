@@ -3,9 +3,9 @@ import TextField from '@mui/material/TextField';
 import useInputState from './hooks/useInputState'
 import { TodosContext } from './context/TodosContext';
 
-function EditItemForm(props) {
-  const [inp, handleInpChange, resetInp] = useInputState(props.text)
-  const {editItem} = useContext(TodosContext)
+function EditItemForm({id, text, toggle}) {
+  const [inp, handleInpChange, resetInp] = useInputState(text)
+  const {dispatch} = useContext(TodosContext)
 
   return (
     <>
@@ -13,9 +13,9 @@ function EditItemForm(props) {
         style={{width: '100%', marginLeft: '12px', marginRight: '12px'}}
         onSubmit={(e) => {
           e.preventDefault()
-          editItem(props.id, inp)
+          dispatch({type: 'EDIT', itemId: id, updText: inp})
           resetInp()
-          props.toggle()
+          toggle()
         }}
       >
         <TextField 

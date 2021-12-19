@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import { v4 as uuid } from 'uuid';
 import { TodosContext } from './context/TodosContext';
 
-function TodoList(props) {
+function TodoList() {
   const {list} = useContext(TodosContext)
   if (list.length > 0)
   return (

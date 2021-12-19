@@ -1,10 +1,8 @@
-import {useState} from 'react'
 import { v4 as uuid } from 'uuid';
 import { useLocalStorageState } from './useLocalStorageState';
 
 function useListState(initialList) {
 
-  // const [list, setList] = useState(initialList)
   const [list, setList] = useLocalStorageState('list', initialList);
 
   const addItem = (newText) => {

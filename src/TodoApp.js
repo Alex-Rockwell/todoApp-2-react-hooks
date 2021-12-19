@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -6,16 +6,9 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
-import useListState from './hooks/useListState';
 import { TodosProvider } from './context/TodosContext';
 
 function TodoApp() {
-  // const initialList = JSON.parse(window.localStorage.getItem('list')) || []
-  // const {list, addItem, removeListItem, toggleComplete, editItem} = useListState(initialList)
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('list', JSON.stringify(list))
-  // }, [list])
 
   return (
       <Paper 

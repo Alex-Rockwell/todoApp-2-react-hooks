@@ -6,14 +6,14 @@ import { TodosContext } from './context/TodosContext';
 
 function TodoForm() {
   const [inp, handleInpChange, resetInp] = useInputState('')
-  const {addItem} = useContext(TodosContext)
+  const {dispatch} = useContext(TodosContext)
 
   return (
     <Paper style={{margin: '1rem 0', padding: '1rem'}}>
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          addItem(inp)
+          dispatch({type: 'ADD', newText: inp})
           resetInp()
         }}
       >

@@ -10,20 +10,20 @@ import EditItemForm from './EditItemForm';
 import { useContext } from 'react';
 import { TodosContext } from './context/TodosContext';
 
-function Item(props) {
+function Item({id, text, completed}) {
   const [isEditing, toggleIsEditing] = useToggle(false)
-  const {removeListItem} = useContext(TodosContext)
+  const {dispatch} = useContext(TodosContext)
   const displayItem = <>
       <Checkbox 
         tabIndex={-1} 
-        checked={props.completed}
-        onChange={() => props.toggleComplete(props.id)}
+        checked={completed}
+        onChange={() => dispatch({type: 'TOGGLE', itemId: id})}
       />
-      <ListItemText style={{textDecoration: props.completed ? 'line-through' : 'none'}}>
-        {props.text}
+      <ListItemText style={{textDecoration: completed ? 'line-through' : 'none'}}>
+        {text}
       </ListItemText>
       <ListItemSecondaryAction>
-        <IconButton aria-label='delete' onClick={() => removeListItem(props.id)}>
+        <IconButton aria-label='delete' onClick={() => dispatch({type: 'REMOVE', itemId: id})}>
           <DeleteSharp />
         </IconButton>
         <IconButton aria-label='edit' onClick={toggleIsEditing}>
@@ -36,9 +36,8 @@ function Item(props) {
     <ListItem style={{height: '65px'}}>
       {(isEditing) 
         ? <EditItemForm 
-            id={props.id}
-            text={props.text}
-            // editItem={props.editItem}
+            id={id}
+            text={text}
             toggle={toggleIsEditing}
           /> 
         : displayItem}
