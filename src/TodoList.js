@@ -7,7 +7,7 @@ import { v4 as uuid } from 'uuid';
 import { TodosContext } from './context/TodosContext';
 
 function TodoList() {
-  const {list} = useContext(TodosContext)
+  const list = useContext(TodosContext)
   if (list.length > 0)
   return (
     <Paper>
@@ -16,7 +16,9 @@ function TodoList() {
           <div  key={uuid()}>
             <Item 
               key={el.id}
-              {...el}
+              id={el.id}
+              text={el.text}
+              completed={el.completed}
             />
             {i < list.length - 1 &&  <Divider/>}
           </div>

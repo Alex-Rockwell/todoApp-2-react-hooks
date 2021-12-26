@@ -7,42 +7,41 @@ import DeleteSharp from '@mui/icons-material/DeleteSharp';
 import EditSharp from '@mui/icons-material/EditSharp';
 import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction';
 import EditItemForm from './EditItemForm';
-import { useContext } from 'react';
-import { TodosContext } from './context/TodosContext';
+import { React, useContext } from 'react';
+import { DispatchContext } from './context/TodosContext';
 
 function Item({id, text, completed}) {
   const [isEditing, toggleIsEditing] = useToggle(false)
-  const {dispatch} = useContext(TodosContext)
-  const displayItem = <>
-      <Checkbox 
-        tabIndex={-1} 
-        checked={completed}
-        onChange={() => dispatch({type: 'TOGGLE', itemId: id})}
-      />
-      <ListItemText style={{textDecoration: completed ? 'line-through' : 'none'}}>
-        {text}
-      </ListItemText>
-      <ListItemSecondaryAction>
-        <IconButton aria-label='delete' onClick={() => dispatch({type: 'REMOVE', itemId: id})}>
-          <DeleteSharp />
-        </IconButton>
-        <IconButton aria-label='edit' onClick={toggleIsEditing}>
-          <EditSharp />
-        </IconButton>
-      </ListItemSecondaryAction>
-  </>
+  const dispatch = useContext(DispatchContext)
+  
   return (
-    <>
     <ListItem style={{height: '65px'}}>
-      {(isEditing) 
+      {
+      (isEditing) 
         ? <EditItemForm 
             id={id}
             text={text}
             toggle={toggleIsEditing}
           /> 
-        : displayItem}
+        : <> <Checkbox 
+              tabIndex={-1} 
+              checked={completed}
+              onChange={() => dispatch({type: 'TOGGLE', itemId: id})}
+            />
+            <ListItemText style={{textDecoration: completed ? 'line-through' : 'none'}}>
+              {text}
+            </ListItemText>
+            <ListItemSecondaryAction>
+              <IconButton aria-label='delete' onClick={() => dispatch({type: 'REMOVE', itemId: id})}>
+                <DeleteSharp />
+              </IconButton>
+              <IconButton aria-label='edit' onClick={toggleIsEditing}>
+                <EditSharp />
+              </IconButton>
+            </ListItemSecondaryAction>
+          </>
+      }
     </ListItem>
-    </>
   )
 }
 

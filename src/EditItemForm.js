@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import TextField from '@mui/material/TextField';
 import useInputState from './hooks/useInputState'
-import { TodosContext } from './context/TodosContext';
+import { DispatchContext } from './context/TodosContext';
 
 function EditItemForm({id, text, toggle}) {
   const [inp, handleInpChange, resetInp] = useInputState(text)
-  const {dispatch} = useContext(TodosContext)
+  const dispatch = useContext(DispatchContext)
 
   return (
     <>
