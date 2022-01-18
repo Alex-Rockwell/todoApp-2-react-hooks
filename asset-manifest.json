@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/todoapp-2-react-hooks/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/todoapp-2-react-hooks/static/js/main.e7959999.chunk.js",
-    "main.js.map": "/todoapp-2-react-hooks/static/js/main.e7959999.chunk.js.map",
-    "runtime-main.js": "/todoapp-2-react-hooks/static/js/runtime-main.09af0281.js",
-    "runtime-main.js.map": "/todoapp-2-react-hooks/static/js/runtime-main.09af0281.js.map",
-    "static/js/2.c3b266a8.chunk.js": "/todoapp-2-react-hooks/static/js/2.c3b266a8.chunk.js",
-    "static/js/2.c3b266a8.chunk.js.map": "/todoapp-2-react-hooks/static/js/2.c3b266a8.chunk.js.map",
-    "static/js/3.4b64c429.chunk.js": "/todoapp-2-react-hooks/static/js/3.4b64c429.chunk.js",
-    "static/js/3.4b64c429.chunk.js.map": "/todoapp-2-react-hooks/static/js/3.4b64c429.chunk.js.map",
-    "index.html": "/todoapp-2-react-hooks/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/todoapp-2-react-hooks/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.c3b266a8.chunk.js.LICENSE.txt": "/todoapp-2-react-hooks/static/js/2.c3b266a8.chunk.js.LICENSE.txt"
+    "main.css": "/todoApp-2-react-hooks/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/todoApp-2-react-hooks/static/js/main.e7959999.chunk.js",
+    "main.js.map": "/todoApp-2-react-hooks/static/js/main.e7959999.chunk.js.map",
+    "runtime-main.js": "/todoApp-2-react-hooks/static/js/runtime-main.0e7ebbc6.js",
+    "runtime-main.js.map": "/todoApp-2-react-hooks/static/js/runtime-main.0e7ebbc6.js.map",
+    "static/js/2.c3b266a8.chunk.js": "/todoApp-2-react-hooks/static/js/2.c3b266a8.chunk.js",
+    "static/js/2.c3b266a8.chunk.js.map": "/todoApp-2-react-hooks/static/js/2.c3b266a8.chunk.js.map",
+    "static/js/3.4b64c429.chunk.js": "/todoApp-2-react-hooks/static/js/3.4b64c429.chunk.js",
+    "static/js/3.4b64c429.chunk.js.map": "/todoApp-2-react-hooks/static/js/3.4b64c429.chunk.js.map",
+    "index.html": "/todoApp-2-react-hooks/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/todoApp-2-react-hooks/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.c3b266a8.chunk.js.LICENSE.txt": "/todoApp-2-react-hooks/static/js/2.c3b266a8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.09af0281.js",
+    "static/js/runtime-main.0e7ebbc6.js",
     "static/js/2.c3b266a8.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.e7959999.chunk.js"
